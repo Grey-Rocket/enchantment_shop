@@ -2108,6 +2108,11 @@ PrefabInstance:
       propertyPath: this_name
       value: 
       objectReference: {fileID: 1205473733}
+    - target: {fileID: 7854250285901868848, guid: 33f5d256e268b0c4f88e3d91b8f0f9a8,
+        type: 3}
+      propertyPath: combinesWith.Array.data[0]
+      value: 
+      objectReference: {fileID: 39265379}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f5d256e268b0c4f88e3d91b8f0f9a8, type: 3}
 --- !u!1 &590236995 stripped
@@ -5633,6 +5638,11 @@ PrefabInstance:
       propertyPath: this_name
       value: 
       objectReference: {fileID: 1771457332}
+    - target: {fileID: 7854250285901868848, guid: 33f5d256e268b0c4f88e3d91b8f0f9a8,
+        type: 3}
+      propertyPath: combinesWith.Array.data[0]
+      value: 
+      objectReference: {fileID: 39265379}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33f5d256e268b0c4f88e3d91b8f0f9a8, type: 3}
 --- !u!1 &1601638120
