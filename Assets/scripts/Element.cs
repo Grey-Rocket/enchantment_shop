@@ -16,7 +16,7 @@ public class Element : MonoBehaviour
     {
         //if there is nothing left to create
         if (created == creates.Length) {
-            this.transform.GetChild(4).gameObject.SetActive(true);
+            this.transform.GetChild(3).gameObject.SetActive(true);
         }
     }
 
@@ -24,7 +24,7 @@ public class Element : MonoBehaviour
         created++;
         //if there is nothing left to create
         if (created == creates.Length) {
-            this.transform.GetChild(4).gameObject.SetActive(true);
+            this.transform.GetChild(3).gameObject.SetActive(true);
         }
     }
 }

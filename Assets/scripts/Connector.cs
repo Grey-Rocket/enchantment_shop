@@ -18,6 +18,8 @@ public class Connector : MonoBehaviour
 
     int numFound = 2;
 
+    public bool is_enchanting = false;
+
     void Update()
     {
         //here it checks if the left mouse button was pressed
@@ -30,10 +32,11 @@ public class Connector : MonoBehaviour
 
             setObject(v3);
 
-            if (right != null && left != null) {
+            if (!is_enchanting && right != null && left != null) {
                 combine();
                 counter.text = numFound + "/20";
             }
+            
 
         }
     }
@@ -43,8 +46,6 @@ public class Connector : MonoBehaviour
         //here it goes through all the elements
         for (int i = 0; i < rightSide.Length; i++) {
             if (rightSide[i].activeSelf) {
-                //Debug.Log(v3);
-                //Debug.Log(rightSide[i].GetComponent<Transform>().position);
 
                 if (isInside(rightSide[i].GetComponent<Transform>().position, v3))
                 {
@@ -197,13 +198,51 @@ public class Connector : MonoBehaviour
     }
 
     IEnumerator incorrect(GameObject lef, GameObject rig) {
-        lef.transform.GetChild(3).gameObject.SetActive(true);
-        rig.transform.GetChild(3).gameObject.SetActive(true);
+        lef.transform.GetChild(4).gameObject.SetActive(true);
+        rig.transform.GetChild(4).gameObject.SetActive(true);
 
         yield return new WaitForSeconds(0.5f);
 
-        lef.transform.GetChild(3).gameObject.SetActive(false);
-        rig.transform.GetChild(3).gameObject.SetActive(false);
+        lef.transform.GetChild(4).gameObject.SetActive(false);
+        rig.transform.GetChild(4).gameObject.SetActive(false);
+
+    }
+
+    public void clear() {
+        if (right != null)
+        {
+            right.transform.GetChild(2).gameObject.SetActive(false);
+            right = null;
+        }
+
+        if (left != null)
+        {
+            left.transform.GetChild(2).gameObject.SetActive(false);
+            left = null;
+        }
+    }
+
+    //this tells what option was chosen
+    public string[] make_selected() {
+
+        //result[0] is weapon, result[1] is armor
+        string[] result = new string[2];
+
+        if (right != null && left != null)
+        {
+            result[0] = left.tag;
+            result[1] = right.tag;
+
+            clear();
+
+            return result;
+        }
+        else {
+
+            clear();
+
+            return null;
+        }
 
     }
 }
